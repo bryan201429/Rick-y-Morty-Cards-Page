@@ -8,7 +8,7 @@ export const SearchContainer=styled.div`
     display: flex;
     justify-content: center;
     margin-bottom: 25px;
-    margin-left:30%;
+    margin-left:20%;
     padding:1%;
 `;
 

@@ -1,4 +1,6 @@
 let myFavorites=[];
+require('dotenv').config();
+const {User,Favorite} = require('../DB_connection')     //Exportados desde ...sequelize.models
 
 const postFav =(req,res)=>{
 

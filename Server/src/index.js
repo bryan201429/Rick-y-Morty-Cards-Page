@@ -16,8 +16,9 @@
 //const server = express();
 
 //const router=require('./routes/index')
-const server=require('./app')
+const server=require('./app');
 const PORT = 3001;
+const {conn}=require('./DB_connection');
 // server.use(express.json());         //Middleware pasa la infomracion en formato json a js para trabajar 
 
 // server.use((req, res, next) => {
@@ -37,6 +38,7 @@ const PORT = 3001;
 // server.use('/rickandmorty',router);   // Agregará la url a todas las rutas
 
 
-server.listen(PORT, () => {
+server.listen(PORT, async() => {                   //!Se añadio async para que funcione con sequelize
    console.log('Server raised in port: ' + PORT);
+   await conn.sync({force: true});
 });
